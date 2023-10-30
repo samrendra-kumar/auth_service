@@ -16,10 +16,10 @@ const prepareAndStartServer = () => {
         {
             db.sequelize.sync({alter:true});
         }
-        const u1=await User.findByPk(3);
-        const r1=await Role.findByPk(2) ;
-       const response=await u1.getRoles() ;
-       console.log(response);
+      //  const u1=await User.findByPk(3);
+      //  const r1=await Role.findByPk(2) ;
+      // const response=await u1.getRoles() ;
+      // console.log(response);
        
         //const repo=new UserRepository() ;
         //const response = await repo.getById(1) ;

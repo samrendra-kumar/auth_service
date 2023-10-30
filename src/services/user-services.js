@@ -16,8 +16,13 @@ class UserService{
        return user ;
      }catch(error)
      {
+      if(error.name=='SequelizeValidationError')
+      {
+        throw error ;
+      }
         console.log("Something went wrong in the service layer ");
         throw error ;
+    
      }
     }
 
@@ -99,6 +104,17 @@ class UserService{
       }catch(error)
       {
         console.log("Somethng went wrong in the password comparison",error);
+        throw error ;
+      }
+    }
+
+    isAdmin(userId)
+    {
+      try{
+       return this.userRepository.isAdmin(userId);
+      }catch(error)
+      {
+        console.log("Somethng went wrong in the service layer ",error);
         throw error ;
       }
     }
